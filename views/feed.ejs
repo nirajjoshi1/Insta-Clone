@@ -88,11 +88,12 @@
               src="/images/uploads/<%= post.picture %>" alt="">
           </div>
           <div class="options w-full px-4 flex justify-between items-center text-[1.4rem]">
-            <div class="flex gap-3 mt-2">
-              <% if(post.like.indexOf(user._id)===-1){ %>
-                <i class="heart ri-heart-3-line"></i>
-                <% } else { %>
-                  <i class="heart ri-heart-3-fill text-red-500"></i>
+            <div class="flex gap-3 mt-2">  
+              <a href="/like/post/<%=elem._id%>">
+                <% if(elem.likes.indexOf(user._id)!== -1){%>
+              <i class="heart ri-heart-3-fill text-red-600"></i></a>
+                <% }else{ %>
+                  <i class="heart ri-heart-3-line"></i>
                   <% } %>
                     <i class="ri-chat-3-line"></i>
                     <i class="ri-share-circle-line"></i>
